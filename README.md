@@ -15,7 +15,7 @@
 
 Prompt created using flow below: 
 
-step 1: make burger images on midjourney
+step 1: make burger images on midjourney/n
 step 2: make videos from images, downloaded 2 videos to keep video smaller
 step 3: string videos together in canva and resize a little, download as single mp4
 step 4: upload to cloudinary and get url with timestamp and version # from "copy url" --> "copy original url with options" --> get link with checkbox ticked "Include the version number in the delivery URL" --> save link on notepad for use in prompt with label "video"
