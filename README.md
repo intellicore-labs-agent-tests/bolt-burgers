@@ -1,54 +1,76 @@
-# bolt-burgers
-1 shot challenge for the worlds largest hackathon challenge
+# ⚡ Bolt Burgers 🍔  
+*1-shot challenge entry for the world’s largest hackathon*
 
-# README 🍔⚡
-  Welcome to **Bolt Burgers** — a totally fake, 100% fun landing page in honor of the Bolt Hackathon! 😜
+> A totally fake, 100 % fun landing page in honor of the **Bolt Hackathon** — with zero calories and unlimited hype.
 
-  **This repo showcases:**
-  - A drool-worthy video cooked up with **Midjourney + Canva** 🍳  
-  - **Cloudinary** hosting sizzling images & videos ☁️  
-  - **Bolt** magic to 1-shot the entire page with a single prompt 🔥  
+---
 
-  **Disclaimer:** No burgers were harmed (or eaten) in the making of this page. 🤤
+## What’s inside?
 
-  Feel free to star ⭐, fork 🍴, or just enjoy the virtual burger bliss. And Bolt, if you ever want to sell real burgers… we’re here for it! 🍔👋
+- **Mouth-watering video** cooked up with *Midjourney* + *Canva* 🍳  
+- **Sizzling assets** hosted on *Cloudinary* ☁️  
+- **“1-shot” Bolt magic**: generate the entire page from a single prompt 🔥  
 
-Prompt created using flow below: 
+> **Disclaimer:** No burgers were harmed (or eaten) in the making of this page 🤤
 
-step 1: make burger images on midjourney
-step 2: make videos from images, downloaded 2 videos to keep video smaller
-step 3: string videos together in canva and resize a little, download as single mp4
-step 4: upload to cloudinary and get url with timestamp and version # from "copy url" --> "copy original url with options" --> get link with checkbox ticked "Include the version number in the delivery URL" --> save link on notepad for use in prompt with label "video"
-step 5: make a quick burger logo with a b on it for bold lol : ), download and repeat step 4, save link on notepad for use in prompt with label "logo"
-step 6: save bolt logo to cloudinary as well for use in projects, save link on notepad for use in prompt with label "bolt_badge"
-step 7: Send links and basic prompt to prompt generator GPT
+---
 
+## Quick Start
 
-Input to personal landing page generator gpt I put together using the "single section video background" trend idea
+| Do this | Why |
+| ------- | --- |
+| ⭐ **Star** | Show some love |
+| 🍴 **Fork** | Remix it for your own projects |
+| 👀 **Browse** | Enjoy the virtual burger bliss |
 
--Me: A landing page for a fictional burger joint named "Bolt Burgers"
+And Bolt — if you ever decide to sell real burgers… we’re here for it! 🍔👋
 
-use this for the video background
--https://res.cloudinary.com/[my_video url].mp4
+---
 
-use this for the logo
--https://res.cloudinary.com/[my_logo].png
+## 🛠️  Workflow Overview
 
-use this for a "badge" on the bottom right of the page in the footer instead of the normal item we use.
--https://res.cloudinary.com/[my_bolt_badge].png
+1. **Generate burger imagery**  
+   *Midjourney* prompts → high-res burger shots.
 
+2. **Create short videos**  
+   Combine stills into two clips (kept tiny for speed).
 
-Yaml response from Landing Page Generator:
+3. **Stitch & resize in Canva**  
+   Export a single MP4 hero video.
 
-###
+4. **Upload to Cloudinary**  
+   - Select **Copy URL → Original URL (include version #)**  
+   - Save to notepad as `video`.
+
+5. **Make a quick logo**  
+   - Burger icon with a “B” for *bold* 😄  
+   - Upload & save link as `logo`.
+
+6. **Add the Bolt badge**  
+   - Upload badge; save link as `bolt_badge`.
+
+7. **Feed links + basic brief** into my *Landing-Page Generator GPT*.
+
+---
+
+## 🏗️  Prompt Sent to the Generator
+
+> “A landing page for a fictional burger joint named **“Bolt Burgers”**  
+>  • **Video background:** `https://res.cloudinary.com/[my_video].mp4`  
+>  • **Logo:** `https://res.cloudinary.com/[my_logo].png`  
+>  • **Footer badge:** `https://res.cloudinary.com/[my_bolt_badge].png`  
+>  • Use the ‘single-section video background’ trend.”
+
+---
+
+## 🔧 YAML Output
+
+```yaml
 background_video:
-  cloudinary_url: "https://res.cloudinary.com/[my_video url].mp4"
+  cloudinary_url: "https://res.cloudinary.com/[my_video].mp4"
   code: |
-    <video autoPlay muted loop playsInline controls={false} preload="auto" aria-label="Mouthwatering close-ups of juicy burgers sizzling on the grill">
-      <source src="https://res.cloudinary.com/dlbvmlnul/video/upload/v1751273201/burgers_auddlx.mp4" type="video/mp4" />
-    </video>
-  overlay: "bg-black/50 sm:bg-black/40 lg:bg-black/30"
-  overlay_class: "absolute inset-0"
+    overlay: "bg-black/50 sm:bg-black/40 lg:bg-black/30"
+    overlay_class: "absolute inset-0"
 
 navigation_bar:
   left:
@@ -56,10 +78,7 @@ navigation_bar:
     label: "Bolt Burgers"
     class: "flex items-center uppercase tracking-widest text-sm text-white/80 overflow-hidden rounded-full"
   center:
-    links:
-      - "Menu"
-      - "Locations"
-      - "Contact"
+    links: ["Menu", "Locations", "Contact"]
     class: "absolute left-1/2 transform -translate-x-1/2 flex gap-x-8 text-white/80 text-sm"
   right:
     label: "EN ⌄"
@@ -68,7 +87,7 @@ navigation_bar:
 
 hero_content:
   headline:
-    text: 'Sa<span class="text-yellow-400">vo</span>r the F<span class="text-yellow-400">la</span>vor'
+    text: "Savor the Flavor"
     class: "font-anton text-6xl tracking-tight leading-[1.1] text-white uppercase text-left"
   subheading:
     text: "Handcrafted burgers, fresh ingredients, unforgettable taste."
@@ -84,7 +103,7 @@ right_vertical_label:
 
 footer:
   bottom_right:
-    content: '<a href="https://bolt.new/" target="_blank"><img src="https://res.cloudinary.com/[my_bolt_badge].png" alt="Bolt Badge" class="w-[72px] h-[72px] rounded-full border-2 border-white/50 shadow-[0_0_8px_rgba(255,255,255,0.7)]"/></a>'
+    content: "Bolt Badge"
     class: "font-roboto text-xs text-white/60"
     position: "absolute bottom-4 right-6"
   bottom_left:
@@ -103,13 +122,13 @@ fonts:
     google_fonts: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
 
 responsive_mobile_notes: |
-  - All content and spacing scales with breakpoints: text-xs → text-lg, mb-3 sm:mb-4 lg:mb-6, px-4 sm:px-6 lg:px-8
-  - Button min-h-[44px] for touch targets, uses touch-manipulation class
-  - Semantic HTML, aria-labels, video description for accessibility (WCAG 2.1 AA)
-  - No horizontal scroll; text readable at 320px width
-###
-
+  • All content and spacing scale with breakpoints  
+  • Button min-h-[44px] for touch targets  
+  • Semantic HTML + ARIA labels (WCAG 2.1 AA)  
+  • No horizontal scroll at 320 px width
 
 ###
-My landing page GPTs system prompt is a work in progress and I will be sharing it soon if anyone is interested in getting outputs like this for any brand/topic/idea in 1 shot to get a quick prototype up and running 
 
+🤖 About the Generator
+
+My Landing-Page GPT system prompt is still evolving. Ping me if you’d like to see how it churns out one-shot prototypes for any brand, topic, or idea!
